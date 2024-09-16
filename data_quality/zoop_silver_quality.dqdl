@@ -1,0 +1,27 @@
+# Example rules: Completeness "colA" between 0.4 and 0.8, ColumnCount > 10
+Rules = [
+    RowCount between 5000 and 20000,
+    IsComplete "id_estoque",
+    StandardDeviation "id_estoque" between 2742.41 and 3031.09,
+    Uniqueness "id_estoque" > 0.95,
+    ColumnValues "id_estoque" <= 9999,
+    IsComplete "data",
+    IsComplete "influencia_autor",
+    StandardDeviation "influencia_autor" between 27434.07 and 30321.87,
+    ColumnValues "influencia_autor" between 124 and 100001,
+    IsComplete "plataforma",
+    ColumnValues "plataforma" in ["X (Twitter)","Facebook","Instagram","TikTok"],
+    ColumnLength "plataforma" between 5 and 12,
+    IsComplete "produto",
+    ColumnLength "produto" between 5 and 23,
+    IsComplete "categoria_produto",
+    ColumnValues "categoria_produto" in ["Eletrodomésticos","Eletrônicos"],
+    ColumnLength "categoria_produto" between 10 and 17,
+    IsComplete "avaliacao",
+    ColumnValues "avaliacao" in ["5","4","3","2","1"],
+    ColumnValues "avaliacao" in ["5","4","3","2"] with threshold >= 0.94,
+    StandardDeviation "avaliacao" between 1.13 and 1.24,
+    ColumnValues "avaliacao" <= 5,
+    IsComplete "comentario",
+    ColumnLength "comentario" between 37 and 81
+]
