@@ -71,7 +71,7 @@ s3output = glueContext.getSink(
   transformation_ctx="s3output",
 )
 
-# Escreendo a tabela no Glue Data Catalog
+# Escrevendo a tabela no Glue Data Catalog
 s3output.setCatalogInfo(
   catalogDatabase="db-glue-zoop", catalogTableName="zoop-glue-estoques_zoop_silver"
 )
